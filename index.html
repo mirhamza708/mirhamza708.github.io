@@ -1,0 +1,357 @@
+<!--
+Recommended project folder structure:
+
+portfolio-site/
+│
+├── index.html
+├── projects/
+│   └── nrf5340-mouse.html
+├── css/
+│   └── style.css
+├── js/
+│   └── main.js
+├── assets/
+│   ├── profile.jpg
+│   ├── mouse-dongle-main.jpg
+│   ├── mouse-photo.jpg
+│   ├── dongle-photo.jpg
+│   ├── pcb-photo.jpg
+│   └── demo-thumbnail.jpg
+└── cv/
+    └── YourName_CV.pdf
+
+How to add a new project later:
+1. Copy projects/nrf5340-mouse.html and rename it, for example projects/uav-rescue-system.html
+2. Edit the title, description, images, and technical details inside the new project page
+3. Add one new project card inside the project-grid section in index.html
+-->
+
+
+<!-- =========================================================
+index.html
+Main portfolio homepage
+========================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Engineering and research portfolio showcasing embedded systems, robotics, electronics, software, and research projects."
+  />
+  <title>Syed Mir Hamza | Engineering Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main navigation">
+        <a href="index.html" class="logo">Syed Mir Hamza</a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation menu">
+          Menu
+        </button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#profile">Profile</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="cv/Syed_Mir_Hamza_CV_W.pdf" target="_blank">CV</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="profile" class="hero container">
+      <div class="hero-content">
+        <span class="eyebrow">Research Student | Embedded Systems | Robotics | Hardware Design</span>
+        <h1>Engineering portfolio for research, hardware, and software projects.</h1>
+        <p>
+          I design and build engineering systems that combine electronics, embedded firmware,
+          communication protocols, sensors, simulation, and software tools. This portfolio presents
+          selected projects with clear documentation, technical architecture, results, and design decisions.
+        </p>
+
+        <div class="button-row">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-secondary" href="cv/Syed_Mir_Hamza_CV_W.pdf" target="_blank">View CV</a>
+          <a class="btn btn-secondary" href="https://github.com/mirhamza708" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <aside class="profile-card">
+        <img
+        class="profile-image"
+        src="assets/profile.jpg"
+        alt="Profile photo of Syed Mir Hamza"
+        />
+        <h2>Syed Mir Hamza</h2>
+        <p>
+          Research student interested in embedded systems, robotics, wireless communication,
+          hardware design, and intelligent engineering systems.
+        </p>
+        <div class="profile-meta">
+          <span>Available for graduate research opportunities</span>
+          <span>Open to engineering internships and collaborations</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section container intro-section">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">
+        I am a research-focused engineering student interested in robotics, UAV systems, 
+        embedded software and hardware, control systems, and intelligent automation. 
+        My work focuses on designing practical systems that combine hardware, software,
+        sensors, communication, and real-world testing.
+      </p>
+
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>Research Interests</h3>
+          <p>
+            UAVs, robotics, Embedded systems, human-computer interaction,
+            sensor integration, and applied AI systems.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Technical Focus</h3>
+          <p>
+            Hardware design, firmware development, communication protocols, PCB design, simulation,
+            desktop software tools, and system integration.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Portfolio Purpose</h3>
+          <p>
+            This site documents selected projects for graduate supervisors, recruiters, collaborators,
+            and anyone interested in my engineering work.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="section container">
+      <div class="section-header-row">
+        <div>
+          <h2 class="section-title">Selected Projects</h2>
+          <p class="section-subtitle">
+            Click any project to open a dedicated page with the full technical description,
+            architecture, media, and project details.
+          </p>
+        </div>
+      </div>
+
+      <div class="project-grid">
+        <a class="project-card featured-project" href="projects/nrf5340-mouse.html">
+            <img
+                class="media-image"
+                src="assets/mouse-dongle-main.jpg"
+                alt="Custom NRF5340 wireless mouse and dongle"
+            />
+          <div class="project-card-content">
+            <span class="project-category">Embedded Systems | Wireless HID | Hardware Design</span>
+            <h3>Custom NRF5340 Wireless Gaming Mouse and High-Speed USB Dongle</h3>
+            <p>
+              A custom-built gaming grade mouse and receiver ecosystem featuring NRF5340 wireless communication,
+              Enhanced ShockBurst, PAW3395 motion sensing, NPM1300 battery management, and a dual-MCU
+              NRF5340 plus LPC55S28 high-speed USB dongle.
+            </p>
+            <div class="tag-row">
+              <span class="tag">NRF5340</span>
+              <span class="tag">LPC55S28</span>
+              <span class="tag">PAW3395</span>
+              <span class="tag">NPM1300</span>
+              <span class="tag">4 kHz Polling Rate</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="project-card" href="projects/quadcopter-arduino-due.html">
+          <img
+            class="media-image"
+            src="assets/quadcopter-cover.jpg"
+            alt="Quadcopter test bench project cover image"
+          />
+          <div class="project-card-content">
+            <span class="project-category">Control Systems | Quadcopter Testing | Arduino Due</span>
+            <h3>Quadcopter Simulation and 3-DOF Test Bench Validation</h3>
+            <p>
+              A personal quadcopter control project using an Arduino Due, MPU6050 IMU, 915 MHz remote
+              control receiver, telemetry transmitter, BLDC motors, ESCs, and a 3-DOF gimbal test bench
+              for safe controller testing. A cascaded PI-PI controller was implemented and validated
+              through live bench testing.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Arduino Due</span>
+              <span class="tag">MPU6050</span>
+              <span class="tag">PI-PI Control</span>
+              <span class="tag">3-DOF Gimbal</span>
+              <span class="tag">BLDC Motors</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="project-card" href="projects/smart-fahu-thermostat.html">
+        <div class="project-card-portrait-wrapper">
+            <img
+            class="project-card-image-portrait"
+            src="assets/fahu-thermostat-enclosure.jpg"
+            alt="Smart wireless thermostat for FAHU automation"
+            />
+        </div>
+
+        <div class="project-card-content">
+            <span class="project-category">Industrial IoT | Building Automation | Wireless Thermostat</span>
+
+            <h3>Smart Wireless Thermostat for Industrial FAHU Automation</h3>
+
+            <p>
+            A custom STM32F401-based smart thermostat designed for Fresh Air Handling Unit automation,
+            replacing costly wired RS485 thermostat networks with 2.4 GHz wireless communication,
+            mesh networking, local manual control, and cloud-based centralized scheduling through MQTT.
+            </p>
+
+            <div class="tag-row">
+            <span class="tag">STM32F401</span>
+            <span class="tag">NRF24</span>
+            <span class="tag">MQTT</span>
+            <span class="tag">Mesh Network</span>
+            <span class="tag">FAHU Automation</span>
+            </div>
+        </div>
+        </a>
+
+        <a class="project-card" href="projects/madgwick-stm32-visualization.html">
+          <img
+            class="media-image"
+            src="assets/madgwick-filter-cover.jpg"
+            alt="Madgwick filter"
+          />
+          <div class="project-card-content">
+            <span class="project-category">Robotics | Sensor Fusion | STM32</span>
+            <h3>Madgwick Filter Implementation on STM32F401 with PC Visualization</h3>
+            <p>
+              A personal embedded robotics project implementing the Madgwick orientation filter on an
+              STM32F401 using MPU9250 accelerometer, gyroscope, and magnetometer data. The computed
+              roll, pitch, and yaw angles are sent to a PC through USB virtual COM port and visualized
+              in Processing as a moving 3D rectangular body.
+            </p>
+            <div class="tag-row">
+              <span class="tag">STM32F401</span>
+              <span class="tag">MPU9250</span>
+              <span class="tag">Madgwick Filter</span>
+              <span class="tag">USB VCP</span>
+              <span class="tag">Processing</span>
+            </div>
+          </div>
+        </a>
+        <!-- Copy this block to add a future project card.
+        <a class="project-card" href="projects/your-project-page.html">
+          <div class="project-image-placeholder">
+            Add image<br />assets/your-project-image.jpg
+          </div>
+          <div class="project-card-content">
+            <span class="project-category">Project Area</span>
+            <h3>Project Title</h3>
+            <p>
+              Short project summary. Explain what the project does, what technologies were used,
+              and why it is interesting.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Tool 1</span>
+              <span class="tag">Tool 2</span>
+              <span class="tag">Tool 3</span>
+            </div>
+          </div>
+        </a>
+        -->
+      </div>
+    </section>
+
+    <section id="skills" class="section container">
+      <h2 class="section-title">Skills and Tools</h2>
+      <p class="section-subtitle">
+        This section helps recruiters and supervisors quickly understand your technical background.
+        Edit these categories as your portfolio grows.
+      </p>
+
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>Embedded and Hardware</h3>
+          <ul>
+            <li>PCB design and hardware architecture</li>
+            <li>Sensor integration and power management</li>
+            <li>USB HID and communication interfaces</li>
+            <li>SPI, I2C, UART, and custom protocols</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Software and Firmware</h3>
+          <ul>
+            <li>Embedded firmware development</li>
+            <li>PC-side configuration tools</li>
+            <li>System debugging and integration</li>
+            <li>Private and public project documentation</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Research and Engineering</h3>
+          <ul>
+            <li>Technical writing and reports</li>
+            <li>Simulation-based development</li>
+            <li>Problem analysis and system design</li>
+            <li>Prototype testing and validation</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container cv-section">
+      <div class="cv-card">
+        <div>
+          <h2 class="section-title">Curriculum Vitae</h2>
+          <p>
+            Download or view my CV for education, research interests, technical skills, selected
+            projects, and contact information.
+          </p>
+        </div>
+        <a class="btn btn-primary" href="cv/Syed_Mir_Hamza_CV_W.pdf" target="_blank">Open CV</a>
+      </div>
+    </section>
+
+    <section id="contact" class="section container">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-subtitle">
+        Interested in my projects, research work, or possible collaboration? You can contact me using
+        the links below.
+      </p>
+
+      <div class="button-row">
+        <a class="btn btn-primary" href="mailto:your.email@example.com">Email Me</a>
+        <a class="btn btn-secondary" href="https://github.com/mirhamza708" target="_blank">GitHub</a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/syed-mir-hamza/" target="_blank">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © 2026 Syed Mir Hamza. Engineering Portfolio.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+
+
+
+

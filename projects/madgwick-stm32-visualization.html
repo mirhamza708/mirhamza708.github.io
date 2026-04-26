@@ -1,0 +1,275 @@
+<!-- =========================================================
+projects/madgwick-stm32-visualization.html
+Dedicated project detail page
+========================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Madgwick filter implementation on STM32F401 using MPU9250 IMU data, USB virtual COM port communication, and PC-side Processing visualization."
+  />
+  <title>Madgwick Filter on STM32F401 | Syed Mir Hamza</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main navigation">
+        <a href="../index.html" class="logo">Syed Mir Hamza</a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation menu">
+          Menu
+        </button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="../index.html#profile">Profile</a>
+          <a href="../index.html#projects">Projects</a>
+          <a href="../index.html#skills">Skills</a>
+          <a href="../cv/Syed_Mir_Hamza_CV_W.pdf" target="_blank">CV</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-hero container">
+      <a href="../index.html#projects" class="back-link">← Back to projects</a>
+      <span class="eyebrow">Robotics | Sensor Fusion | STM32</span>
+      <h1>Madgwick Filter Implementation on STM32F401 with PC Visualization</h1>
+      <p>
+        A personal robotics and embedded sensing project developed to test real-time orientation
+        estimation on hardware. The system reads accelerometer, gyroscope, and magnetometer data from
+        an MPU9250 sensor, applies the Madgwick filter on an STM32F401 microcontroller, and sends the
+        resulting roll, pitch, and yaw angles to a PC through a USB virtual COM port for visualization.
+      </p>
+
+      <div class="button-row">
+        <a class="btn btn-primary" href="https://github.com/mirhamza708/Madgwick-filter-STM32-MPU9250.git" target="_blank">
+          View GitHub Repository
+        </a>
+        <a class="btn btn-secondary" href="#demo">View Demo</a>
+      </div>
+
+      <div class="project-summary-panel">
+        <div>
+          <strong>Project Type</strong>
+          <span>Personal robotics project</span>
+        </div>
+        <div>
+          <strong>Microcontroller</strong>
+          <span>STM32F401</span>
+        </div>
+        <div>
+          <strong>Sensor</strong>
+          <span>MPU9250 IMU</span>
+        </div>
+        <div>
+          <strong>Output</strong>
+          <span>Roll, pitch, and yaw visualization</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo" class="container project-cover-section">
+      <div class="single-video-card">
+        <video class="project-demo-video" controls>
+          <source src="../assets/madgwick-stm32-demo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <p>
+          Live demo showing the STM32F401 and MPU9250 hardware running the Madgwick filter and sending
+          orientation data to a PC-side Processing visualization.
+        </p>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">Project Overview</h2>
+      <p class="section-subtitle">
+        This project was created to explore sensor fusion for robotics applications using real hardware.
+        The goal was to implement the Madgwick filter on an STM32F401 microcontroller, process raw IMU
+        data from an MPU9250 sensor, calculate orientation angles, and visualize the motion on a PC in
+        real time.
+      </p>
+
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>Sensor Fusion</h3>
+          <p>
+            The system combines accelerometer, gyroscope, and magnetometer data from the MPU9250 to
+            estimate orientation using the Madgwick filter.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Embedded Processing</h3>
+          <p>
+            Orientation estimation is performed directly on the STM32F401, allowing the microcontroller
+            to output processed roll, pitch, and yaw values instead of only raw sensor data.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>PC Visualization</h3>
+          <p>
+            A Processing-based visualization receives orientation data through the USB virtual COM port
+            and animates a rectangular body to represent the sensor board motion.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">System Architecture</h2>
+      <p class="section-subtitle">
+        The system is divided into two parts: embedded firmware on the STM32F401 and a PC-side
+        visualization program. The STM32 reads raw motion data, computes orientation using the Madgwick
+        filter, and sends the processed angles to the PC. The PC program converts the data into the
+        correct frame of reference and visualizes the motion.
+      </p>
+
+      <div class="architecture-flow">
+        <div class="flow-box">MPU9250 Sensor</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">STM32F401 Firmware</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Madgwick Filter</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Roll, Pitch, Yaw</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">USB Virtual COM Port</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Processing Visualization</div>
+      </div>
+
+      <div class="grid grid-2 architecture-details">
+        <article class="card">
+          <h3>Embedded Firmware</h3>
+          <ul>
+            <li>Developed using STM32CubeIDE</li>
+            <li>Reads accelerometer, gyroscope, and magnetometer data from MPU9250</li>
+            <li>Applies the Madgwick filter on the STM32F401</li>
+            <li>Computes roll, pitch, and yaw orientation angles</li>
+            <li>Sends processed data to the PC using USB virtual COM port</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>PC-Side Visualization</h3>
+          <ul>
+            <li>Developed using the Processing framework</li>
+            <li>Receives orientation data from the USB COM port</li>
+            <li>Applies a rotation matrix to convert sensor data into the PC frame of reference</li>
+            <li>Creates a 3D rectangular body representing the sensor mounted on a breadboard</li>
+            <li>Updates the 3D body orientation in real time based on sensor movement</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">My Contribution</h2>
+      <p class="section-subtitle">
+        This was a personal project completed to strengthen my understanding of robotics sensor fusion,
+        embedded firmware development, real-time data communication, and PC-side visualization.
+      </p>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <strong>Firmware Development</strong>
+          <p>
+            Implemented STM32F401 firmware in STM32CubeIDE to acquire MPU9250 sensor data and process
+            it using the Madgwick filter.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <strong>Sensor Fusion</strong>
+          <p>
+            Applied accelerometer, gyroscope, and magnetometer readings to estimate real-time
+            orientation in roll, pitch, and yaw.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <strong>USB Communication</strong>
+          <p>
+            Configured USB virtual COM port communication to send processed orientation data from the
+            STM32F401 to the PC.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <strong>Visualization Software</strong>
+          <p>
+            Developed a Processing-based PC visualization that maps the sensor orientation to a 3D
+            rectangular body representing the breadboard-mounted hardware.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">Technical Highlights</h2>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>Real-Time Orientation Estimation</h3>
+          <p>
+            The filter runs on the STM32F401 and outputs processed orientation angles rather than only
+            streaming raw sensor readings.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Hardware-in-the-Loop Visualization</h3>
+          <p>
+            Moving the physical breadboard changes the orientation of the 3D body on the PC, creating a
+            direct visual representation of the sensor motion.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Open Repository Link</h3>
+          <p>
+            A Github repository is included. The viewers can check the full implementation details 
+            on the github repository page.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">Professional Project Description</h2>
+      <article class="card reading-card">
+        <p>
+          This personal project involved implementing the Madgwick orientation filter on an STM32F401
+          microcontroller using an MPU9250 inertial measurement unit. The firmware was developed in
+          STM32CubeIDE and reads accelerometer, gyroscope, and magnetometer data from the sensor. The
+          sensor data is processed on the microcontroller to estimate roll, pitch, and yaw angles, which
+          are then transmitted to a host PC through a USB virtual COM port.
+        </p>
+        <p>
+          A PC-side visualization program was developed using the Processing framework. The program
+          receives orientation data from the COM port, applies a rotation matrix to convert the sensor
+          readings into the PC frame of reference, and maps the resulting orientation to a 3D rectangular
+          body representing the sensor mounted on a breadboard. As the physical breadboard is moved by
+          hand, the virtual body moves accordingly on the computer, providing a real-time visual
+          demonstration of sensor fusion and embedded orientation estimation.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © 2026 Syed Mir Hamza. Engineering Portfolio.
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

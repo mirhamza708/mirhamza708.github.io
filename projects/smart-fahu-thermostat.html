@@ -1,0 +1,344 @@
+<!-- =========================================================
+projects/smart-fahu-thermostat.html
+Dedicated project detail page
+========================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Smart wireless thermostat hardware and software design for industrial Fresh Air Handling Unit automation using STM32F401, NRF24 wireless communication, mesh networking, MQTT, and cloud-based central control."
+  />
+  <title>Smart Wireless FAHU Thermostat | Syed Mir Hamza</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main navigation">
+        <a href="../index.html" class="logo">Syed Mir Hamza</a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation menu">
+          Menu
+        </button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="../index.html#profile">Profile</a>
+          <a href="../index.html#projects">Projects</a>
+          <a href="../index.html#skills">Skills</a>
+          <a href="../cv/Syed_Mir_Hamza_CV_W.pdf" target="_blank">CV</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-hero container">
+      <a href="../index.html#projects" class="back-link">← Back to projects</a>
+      <span class="eyebrow">Industrial IoT | Building Automation | Wireless Thermostat</span>
+      <h1>Smart Wireless Thermostat for Industrial FAHU Automation</h1>
+      <p>
+        A custom smart thermostat designed for Fresh Air Handling Unit automation in commercial and
+        industrial buildings. The system replaced conventional manually controlled thermostats and
+        expensive wired control-room connections with a wireless thermostat network supporting local
+        control, centralized cloud scheduling, and 2.4 GHz wireless communication.
+      </p>
+
+      <div class="project-summary-panel">
+        <div>
+          <strong>Project Type</strong>
+          <span>Professional industrial IoT project</span>
+        </div>
+        <div>
+          <strong>Organization</strong>
+          <span>MachinesensIoT</span>
+        </div>
+        <div>
+          <strong>Main Controller</strong>
+          <span>STM32F401</span>
+        </div>
+        <div>
+          <strong>Connectivity</strong>
+          <span>2.4 GHz wireless and MQTT cloud control</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="container project-cover-section">
+        <img
+          class="media-image"
+          src="../assets/fahu-thermostat-enclosure.jpg"
+          alt="Smart FAHU thermostat enclosed in its case"
+        />
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">Project Overview</h2>
+      <p class="section-subtitle">
+        Fresh Air Handling Units are commonly used in commercial and industrial buildings to manage
+        fresh air supply and indoor environmental conditions. In many installations, thermostats are
+        either manually controlled locally or connected to the main control room through wired RS485
+        networks. For buildings that are already constructed, adding RS485 wiring can be expensive and
+        labor-intensive because ducts, cable routes, and installation work are required throughout the
+        building.
+      </p>
+
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>Problem</h3>
+          <p>
+            Conventional FAHU thermostats often required manual operation or costly wired integration
+            with a central control room, especially when retrofitting existing buildings.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Solution</h3>
+          <p>
+            A wireless smart thermostat was developed to replace conventional thermostats and connect
+            to a central system using 2.4 GHz wireless communication instead of new RS485 cabling.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Result</h3>
+          <p>
+            The thermostat supported both local manual control using onboard buttons and centralized
+            scheduling and control through a cloud platform using MQTT communication.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">Hardware Design</h2>
+      <p class="section-subtitle">
+        The thermostat hardware was designed from scratch and manufactured through JLCPCB. The design
+        integrated control, wireless communication, display interface, sensing, and user input into a
+        compact thermostat form factor suitable for building automation use.
+      </p>
+
+      <div class="grid grid-2">
+        <article class="card">
+          <h3>Main Hardware Components</h3>
+          <ul>
+            <li>STM32F401 microcontroller as the main control unit</li>
+            <li>NRF24 2.4 GHz wireless module for local wireless communication</li>
+            <li>Custom display manufactured in China</li>
+            <li>Display controller and display interface circuitry</li>
+            <li>Temperature and humidity sensor for room condition monitoring</li>
+            <li>Onboard buttons for manual thermostat control</li>
+            <li>Custom PCB designed and manufactured through JLCPCB</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Design Purpose</h3>
+          <p>
+            The hardware was designed to fit the role of a practical wall-mounted thermostat while
+            supporting both local interaction and wireless building-level automation. The custom display
+            and onboard buttons allowed users to operate the thermostat manually, while the wireless
+            subsystem enabled central monitoring and control without installing new communication wires.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">Software and Network Architecture</h2>
+      <p class="section-subtitle">
+        The software was designed for buildings with many thermostats installed across different rooms
+        or zones. Instead of each thermostat requiring a direct wired connection to the control room,
+        the thermostats formed a wireless mesh network with one or more master nodes that relayed data
+        between the thermostat network and the cloud platform.
+      </p>
+
+      <div class="architecture-flow">
+        <div class="flow-box">Thermostat Nodes</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">2.4 GHz Wireless Mesh</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Master Relay Node</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">MQTT</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Cloud Platform</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Scheduling and Central Control</div>
+      </div>
+
+      <div class="grid grid-2 architecture-details">
+        <article class="card">
+          <h3>Local Thermostat Functions</h3>
+          <ul>
+            <li>Room temperature and humidity sensing</li>
+            <li>Manual setting control through onboard buttons</li>
+            <li>Display of thermostat state and environmental data</li>
+            <li>Wireless reporting of current room and device status</li>
+            <li>Reception of control commands from the central platform</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Building-Level Functions</h3>
+          <ul>
+            <li>Wireless communication between multiple thermostat nodes</li>
+            <li>Mesh-style message relay through one or more master nodes</li>
+            <li>MQTT communication with the cloud platform</li>
+            <li>Centralized scheduling for building automation</li>
+            <li>Remote control of FAHU thermostat settings</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">My Contribution</h2>
+      <p class="section-subtitle">
+        This project was completed as professional work at MachinesensIoT. My role covered the full
+        hardware and software design of the thermostat system, from concept to manufactured PCB and
+        functional embedded software.
+      </p>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <strong>Hardware Design</strong>
+          <p>
+            Designed the thermostat hardware from scratch, including STM32F401 integration, NRF24
+            wireless communication, display interface, sensing, buttons, and PCB design for manufacturing.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <strong>Software Design</strong>
+          <p>
+            Developed the embedded software architecture for local thermostat control, sensor reading,
+            display operation, wireless communication, and central command handling.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <strong>Wireless Network Design</strong>
+          <p>
+            Designed the communication approach for buildings with many thermostat nodes, including
+            mesh-style wireless communication and master-node message relaying.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <strong>Cloud Integration</strong>
+          <p>
+            Integrated the thermostat network concept with cloud-side control through MQTT, enabling
+            centralized scheduling and remote FAHU automation.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">Photos and Operation Demo</h2>
+      <p class="section-subtitle">
+        Add the two PCB photos, the enclosed thermostat photo, and the operation video here. These
+        media files are useful because they show that the project moved beyond concept into actual
+        hardware manufacturing and functional testing.
+      </p>
+
+      <div class="media-grid">
+        <img
+          class="media-image"
+          src="../assets/fahu-pcb-front.jpg"
+          alt="PCB view of the smart FAHU thermostat"
+        />
+
+        <img
+          class="media-image"
+          src="../assets/fahu-pcb-back.jpg"
+          alt="Second PCB view of the smart FAHU thermostat"
+        />
+
+        <img
+          class="media-image"
+          src="../assets/fahu-thermostat-enclosure.jpg"
+          alt="Smart FAHU thermostat enclosed in its case"
+        />
+
+        <video class="media-video-file" controls>
+          <source src="../assets/fahu-thermostat-demo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">Technical Highlights</h2>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>Wireless Retrofit Solution</h3>
+          <p>
+            The thermostat reduced the need for expensive post-construction RS485 wiring by using
+            2.4 GHz wireless communication for building-level control.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Mesh Network Operation</h3>
+          <p>
+            Multiple thermostats could operate as part of a wireless building network, with master
+            nodes relaying messages between devices and the cloud platform.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Manual and Cloud Control</h3>
+          <p>
+            The thermostat supported both local button-based control and centralized cloud-based
+            scheduling and control, making it practical for real building operation.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">Professional Project Description</h2>
+      <article class="card reading-card">
+        <p>
+          This project involved the complete hardware and software design of a smart wireless thermostat
+          for industrial Fresh Air Handling Unit automation. The system was developed to solve a common
+          building automation problem: conventional thermostats are often manually controlled, and
+          connecting them to a main control room through RS485 wiring can be expensive and difficult in
+          already constructed buildings because new ducts, cable routing, and installation work are
+          required.
+        </p>
+        <p>
+          The solution was a wireless thermostat that could replace a conventional thermostat while
+          communicating with the central control system through a 2.4 GHz wireless network. The hardware
+          was built around an STM32F401 microcontroller, NRF24 wireless communication module, custom
+          display and display controller, onboard buttons, and a temperature and humidity sensor. The
+          PCB and hardware were designed from scratch and manufactured through JLCPCB, with a custom
+          display manufactured in China.
+        </p>
+        <p>
+          The software was designed for buildings containing many thermostat nodes. The thermostats
+          formed a mesh-style wireless network with one or more master nodes that relayed messages
+          between the thermostats and the cloud platform. MQTT was used for cloud communication, enabling
+          centralized scheduling and remote FAHU control while still allowing manual operation directly
+          from the thermostat. The project demonstrates industrial IoT product development, embedded
+          hardware design, wireless communication, cloud-connected control, and practical building
+          automation system design.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © 2026 Syed Mir Hamza. Engineering Portfolio.
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

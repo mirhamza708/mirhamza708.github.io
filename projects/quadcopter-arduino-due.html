@@ -1,0 +1,303 @@
+<!-- =========================================================
+projects/quadcopter-arduino-due.html
+Dedicated project detail page
+========================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Quadcopter simulation and 3-DOF gimbal test bench validation project using Arduino Due, MPU6050, 915 MHz remote control, BLDC motors, ESCs, and cascaded PI-PI control."
+  />
+  <title>Quadcopter 3-DOF Test Bench Validation | Syed Mir Hamza</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main navigation">
+        <a href="../index.html" class="logo">Syed Mir Hamza</a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation menu">
+          Menu
+        </button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="../index.html#profile">Profile</a>
+          <a href="../index.html#projects">Projects</a>
+          <a href="../index.html#skills">Skills</a>
+          <a href="../cv/Syed_Mir_Hamza_CV_W.pdf" target="_blank">CV</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-hero container">
+      <a href="../index.html#projects" class="back-link">← Back to projects</a>
+      <span class="eyebrow">Control Systems | Quadcopter Testing | Arduino Due</span>
+      <h1>Quadcopter Simulation and 3-DOF Test Bench Validation</h1>
+      <p>
+        A personal quadcopter control and testing project developed to validate attitude control
+        performance on a safe 3-DOF gimbal test bench before free-flight testing. The setup allowed
+        the quadcopter to rotate in roll, pitch, and yaw while reducing the risk of hardware damage
+        during controller development.
+      </p>
+
+      <div class="project-summary-panel">
+        <div>
+          <strong>Project Type</strong>
+          <span>Personal control systems project</span>
+        </div>
+        <div>
+          <strong>Main Controller</strong>
+          <span>Arduino Due</span>
+        </div>
+        <div>
+          <strong>Control Method</strong>
+          <span>Cascaded PI-PI controller</span>
+        </div>
+        <div>
+          <strong>Validation</strong>
+          <span>Live 3-DOF bench testing</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="container project-cover-section">
+      <div class="single-video-card">
+        <video class="project-demo-video" controls>
+          <source src="../assets/quadcopter-testbench-demo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <p>
+          Demo video showing the quadcopter mounted on the 3-DOF gimbal test bench during live
+          controller testing.
+        </p>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">Project Overview</h2>
+      <p class="section-subtitle">
+        This project focused on the simulation, implementation, and experimental testing of a
+        quadcopter attitude controller using an Arduino Due-based hardware setup. Instead of testing
+        the controller directly in free flight, the quadcopter was mounted on a 3-DOF gimbal test
+        bench. This allowed controlled rotation in roll, pitch, and yaw while keeping the vehicle
+        physically constrained, making it safer to tune and validate the controller.
+      </p>
+
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>Safe Controller Testing</h3>
+          <p>
+            The quadcopter was mounted on a 3-DOF gimbal test bench to evaluate control behavior
+            without risking a crash or damaging the hardware during early controller development.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Arduino Due-Based Control</h3>
+          <p>
+            An Arduino Due was used as the main control board, processing IMU feedback, remote control
+            commands, and motor output signals for attitude stabilization.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Stable PI-PI Performance</h3>
+          <p>
+            A cascaded PI-PI controller was implemented for attitude control. The controller produced
+            very stable performance during live test bench validation.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">Hardware Setup</h2>
+      <p class="section-subtitle">
+        The hardware platform combined sensing, control, actuation, remote command input, and feedback
+        transmission to a host PC. The system was powered from an external power supply during bench
+        testing.
+      </p>
+
+      <div class="grid grid-2">
+        <article class="card">
+          <h3>Quadcopter Electronics</h3>
+          <ul>
+            <li>Arduino Due as the main flight controller</li>
+            <li>MPU6050 sensor for inertial measurement and attitude feedback</li>
+            <li>915 MHz receiver for remote control input commands</li>
+            <li>Telemetry transmitter for sending feedback to a host PC</li>
+            <li>Four 3800 KV BLDC motors with electronic speed controllers</li>
+            <li>External power supply for controlled bench operation</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>3-DOF Test Bench</h3>
+          <ul>
+            <li>Mechanical gimbal setup for constrained motion testing</li>
+            <li>Allows rotation around roll, pitch, and yaw axes</li>
+            <li>Reduces risk of propeller, frame, motor, or electronics damage</li>
+            <li>Useful for tuning attitude controllers before free-flight testing</li>
+            <li>Supports live observation of controller stability and response</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">Control Architecture</h2>
+      <p class="section-subtitle">
+        The controller was implemented as a cascaded PI-PI control structure. This approach separates
+        the control problem into inner and outer loops, making the system easier to tune and helping
+        achieve stable attitude response during bench testing.
+      </p>
+
+      <div class="architecture-flow">
+        <div class="flow-box">Remote Control Input</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Arduino Due</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Cascaded PI-PI Controller</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">ESC Commands</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">BLDC Motors</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">3-DOF Gimbal Motion</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">MPU6050 Feedback</div>
+      </div>
+
+      <article class="card card-spaced">
+        <h3>Why a Test Bench Was Used</h3>
+        <p>
+          A quadcopter controller can be difficult to tune safely in free flight because unstable
+          parameters may cause sudden motion, crashes, or hardware damage. The 3-DOF gimbal test bench
+          made it possible to test roll, pitch, and yaw behavior while keeping the quadcopter mounted
+          in a controlled environment. This allowed the controller response to be observed, adjusted,
+          and validated more safely before considering unrestricted flight testing.
+        </p>
+      </article>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">My Contribution</h2>
+      <p class="section-subtitle">
+        This was a personal project focused on control implementation, hardware integration, testing,
+        and validation of a quadcopter attitude controller.
+      </p>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <strong>System Integration</strong>
+          <p>
+            Integrated the Arduino Due, MPU6050 sensor, remote control receiver, telemetry transmitter,
+            BLDC motors, ESCs, and external power supply into a working quadcopter test platform.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <strong>Controller Design</strong>
+          <p>
+            Implemented and tested a cascaded PI-PI controller for stable attitude control behavior on
+            the 3-DOF gimbal setup.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <strong>Bench Testing</strong>
+          <p>
+            Performed live controller validation with the quadcopter mounted on the gimbal, observing
+            stability, response, and overall control behavior.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <strong>Feedback and Monitoring</strong>
+          <p>
+            Used feedback transmission to a host PC to monitor system behavior during testing and
+            support controller evaluation.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">Technical Highlights</h2>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>3-DOF Gimbal Validation</h3>
+          <p>
+            The test bench allowed roll, pitch, and yaw testing without exposing the quadcopter to the
+            same level of risk as free-flight experiments.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Cascaded PI-PI Control</h3>
+          <p>
+            The implemented controller achieved stable behavior during live bench testing and provided
+            a practical control structure for attitude stabilization.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Real Hardware Testing</h3>
+          <p>
+            The project moved beyond simulation by validating the controller on an actual quadcopter
+            hardware setup using motors, ESCs, sensor feedback, and remote commands.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">Acknowledgment</h2>
+      <article class="card reading-card">
+        <p>
+          The 3-DOF gimbal test bench used in this project was provided by Prof. Sarvat Mushtaq Ahmad,
+          currently an Associate Professor at King Fahd University of Petroleum and Minerals. The
+          project itself is presented here as a personal engineering and control systems project.
+        </p>
+      </article>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">Professional Project Description</h2>
+      <article class="card reading-card">
+        <p>
+          This project involved the simulation, implementation, and live testing of a quadcopter
+          attitude control system using an Arduino Due-based hardware platform. The quadcopter was
+          mounted on a 3-DOF gimbal test bench that allowed constrained roll, pitch, and yaw rotation,
+          enabling safe controller testing without risking hardware damage during unstable tuning or
+          early-stage validation.
+        </p>
+        <p>
+          The hardware setup included an Arduino Due, MPU6050 inertial sensor, 915 MHz remote control
+          receiver, telemetry transmitter for sending feedback to a host PC, four 3800 KV BLDC motors,
+          electronic speed controllers, and an external power supply. A cascaded PI-PI controller was
+          implemented and tested on the bench setup, resulting in very stable performance during live
+          validation. The project demonstrates practical control systems development, embedded hardware
+          integration, attitude feedback processing, motor control, and safe experimental validation of
+          aerial robotics hardware.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © 2026 Syed Mir Hamza. Engineering Portfolio.
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

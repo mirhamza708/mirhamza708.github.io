@@ -1,0 +1,349 @@
+<!-- =========================================================
+projects/nrf5340-mouse.html
+Dedicated project detail page
+========================================================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Custom NRF5340 wireless gaming mouse and high-speed USB dongle project with PAW3395 sensor, NPM1300 power management, Enhanced ShockBurst communication, and LPC55S28 high-speed HID interface."
+  />
+  <title>Custom NRF5340 Wireless Mouse | Syed Mir Hamza</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main navigation">
+        <a href="../index.html" class="logo">Syed Mir Hamza</a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation menu">
+          Menu
+        </button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="../index.html#profile">Profile</a>
+          <a href="../index.html#projects">Projects</a>
+          <a href="../index.html#skills">Skills</a>
+          <a href="../cv/Syed_Mir_Hamza_CV_W.pdf" target="_blank">CV</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-hero container">
+      <a href="../index.html#projects" class="back-link">← Back to projects</a>
+      <span class="eyebrow">Embedded Systems | Wireless HID | Hardware Design</span>
+      <h1>Custom NRF5340 Wireless Gaming Mouse and High-Speed USB Dongle</h1>
+      <p>
+        A complete custom mouse and receiver system designed from hardware to software, supporting
+        wired USB communication and low-latency wireless communication through Nordic Enhanced
+        ShockBurst, with a 4 kHz wireless refresh-rate target and a dual-MCU high-speed USB dongle.
+      </p>
+
+      <div class="project-summary-panel">
+        <div>
+          <strong>Project Type</strong>
+          <span>Personal engineering project</span>
+        </div>
+        <div>
+          <strong>Role</strong>
+          <span>Full hardware and software designer</span>
+        </div>
+        <div>
+          <strong>Status</strong>
+          <span>Prototype designed and demonstrated</span>
+        </div>
+        <div>
+          <strong>Code Availability</strong>
+          <span>Private codebase</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="container project-cover-section">
+    <img
+        class="media-image"
+        src="../assets/mouse-dongle-main.jpg"
+        alt="Custom NRF5340 wireless mouse and dongle"
+    />
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">Project Overview</h2>
+      <p class="section-subtitle">
+        This project is a custom high-performance wireless mouse ecosystem consisting of a custom
+        NRF5340-based mouse, a custom NRF5340 plus NXP LPC55S28 receiver dongle, and PC-side
+        configuration software. The system was designed to support both wired USB operation and
+        wireless operation through Nordic Enhanced ShockBurst communication, targeting a 4 kHz
+        refresh rate for low-latency input performance.
+      </p>
+
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>Custom Mouse Hardware</h3>
+          <p>
+            The mouse PCB was designed around the NRF5340 SoC, PAW3395 optical sensor, and NPM1300
+            power management IC. The design includes motion sensing, wireless communication, USB
+            connectivity, battery charging, battery monitoring, and embedded firmware support.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>High-Speed Receiver Dongle</h3>
+          <p>
+            The dongle combines an NRF5340 wireless radio interface with an NXP LPC55S28
+            microcontroller for high-speed USB HID communication. This architecture was selected to
+            overcome the NRF5340 full-speed USB limitation while preserving NRF wireless capability.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>PC Configuration Software</h3>
+          <p>
+            A dedicated PC-side host application was developed to configure mouse settings and
+            interact with the device from the computer. The software supports practical configuration
+            without requiring the internal source code to be released publicly.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">System Architecture</h2>
+      <p class="section-subtitle">
+        The system uses a split architecture to balance wireless performance, USB capability, and
+        power efficiency. The mouse collects motion data and sends input reports through USB or
+        wireless communication. In wireless mode, the dongle receives radio packets through the
+        NRF5340 and passes processed data to the LPC55S28 through high-speed SPI for high-speed USB
+        HID reporting to the PC.
+      </p>
+
+      <div class="architecture-flow">
+        <div class="flow-box">PAW3395 Motion Sensor</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Mouse NRF5340</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Enhanced ShockBurst Wireless Link</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Dongle NRF5340</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">High-Speed SPI Protocol</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">LPC55S28 High-Speed USB HID</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">PC</div>
+      </div>
+
+      <div class="grid grid-2 architecture-details">
+        <article class="card">
+          <h3>Mouse Subsystem</h3>
+          <ul>
+            <li>NRF5340-based embedded control and wireless communication</li>
+            <li>PAW3395 sensor for high-performance optical motion tracking</li>
+            <li>NPM1300 for battery charging, monitoring, and power management</li>
+            <li>USB communication support for wired operation</li>
+            <li>Wireless communication through Enhanced ShockBurst protocol</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Dongle Subsystem</h3>
+          <ul>
+            <li>NRF5340 for wireless packet reception from the mouse</li>
+            <li>NXP LPC55S28 for high-speed USB HID communication with the PC</li>
+            <li>High-speed SPI link between NRF5340 and LPC55S28</li>
+            <li>Custom messaging protocol between the two MCUs</li>
+            <li>Designed to support 4 kHz mouse report rate</li>
+          </ul>
+        </article>
+      </div>
+
+      <article class="card card-spaced">
+        <h3>Why the Dual-MCU Dongle Was Used</h3>
+        <p>
+          The NRF5340 provides the wireless communication capabilities required for the mouse receiver,
+          but its USB interface is limited to full-speed USB. To support high-speed HID communication,
+          the dongle integrates the LPC55S28 as a dedicated high-speed USB interface controller. The
+          NRF5340 receives wireless input packets and forwards processed data to the LPC55S28 through
+          a high-speed SPI connection using a custom messaging protocol. This allows the system to
+          combine Nordic wireless communication with high-speed USB HID reporting in a single compact
+          receiver.
+        </p>
+      </article>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">My Contribution</h2>
+      <p class="section-subtitle">
+        This was a complete end-to-end embedded systems project covering electronics design,
+        firmware design, wireless communication, USB HID behavior, inter-processor communication,
+        power management, and desktop-side configuration software.
+      </p>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <strong>Hardware Design</strong>
+          <p>
+            Designed the custom mouse and dongle electronics, including component selection, circuit
+            design, PCB layout, power architecture, sensor integration, USB interface planning, and
+            inter-MCU communication routing.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <strong>Firmware Design</strong>
+          <p>
+            Developed embedded firmware for the mouse and dongle, including motion data handling,
+            USB communication, wireless packet exchange, SPI communication, and custom protocol
+            design.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <strong>Wireless System</strong>
+          <p>
+            Implemented wireless communication using NRF Enhanced ShockBurst with a design target of
+            4 kHz refresh rate for low-latency mouse input.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <strong>Host Software</strong>
+          <p>
+            Built PC-side software to configure mouse settings and interact with the device from a
+            desktop environment.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">Technical Highlights</h2>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>4 kHz Wireless Target</h3>
+          <p>
+            The wireless mouse and dongle architecture was designed around low-latency reporting,
+            with Enhanced ShockBurst used for fast mouse-to-dongle communication.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>High-Speed HID Path</h3>
+          <p>
+            The dongle uses LPC55S28 to provide high-speed USB HID communication, while the NRF5340
+            handles radio communication.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Custom MCU Messaging</h3>
+          <p>
+            A custom SPI-based messaging protocol was designed for communication between the NRF5340
+            and LPC55S28 inside the dongle.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Advanced Sensor Integration</h3>
+          <p>
+            The PAW3395 sensor was integrated for high-performance motion tracking suitable for
+            precision mouse applications.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Battery Management</h3>
+          <p>
+            The NPM1300 was used for battery charging, monitoring, and power management, supporting
+            portable wireless operation.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Private Codebase</h3>
+          <p>
+            The source code is not publicly available, but the project architecture, design decisions,
+            hardware stack, and system behavior are documented here.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">Photos and Demo</h2>
+      <p class="section-subtitle">
+        Add real product photos, PCB images, enclosure photos, and a short demonstration video here.
+        These visuals are important because they prove that the project was physically designed, built,
+        and tested.
+      </p>
+
+        <div class="media-grid">
+        <img
+            class="media-image"
+            src="../assets/mouse-photo.jpg"
+            alt="Custom NRF5340 wireless mouse"
+        />
+
+        <img
+            class="media-image"
+            src="../assets/dongle-photo.jpg"
+            alt="Custom NRF5340 and LPC55S28 receiver dongle"
+        />
+
+        <img
+            class="media-image"
+            src="../assets/pcb-photo.jpg"
+            alt="PCB and assembly view of the mouse and dongle"
+        />
+
+        <video class="media-video-file" controls>
+            <source src="../assets/demo-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+        </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">Professional Project Description</h2>
+      <article class="card reading-card">
+        <p>
+          This project involved the complete design and development of a custom high-performance
+          wireless mouse system consisting of an NRF5340-based mouse, an NRF5340 and NXP LPC55S28-based
+          receiver dongle, and PC-side configuration software. The mouse supports both direct USB
+          communication and wireless communication using Nordic Enhanced ShockBurst, with the wireless
+          system designed for a 4 kHz refresh rate. Since the NRF5340 only supports full-speed USB,
+          the receiver dongle was designed with a dual-microcontroller architecture: the NRF5340 handles
+          wireless communication, while the LPC55S28 provides high-speed USB HID communication with the
+          host computer. The two microcontrollers communicate through a high-speed SPI interface using
+          a custom messaging protocol.
+        </p>
+        <p>
+          The mouse hardware integrates a PAW3395 optical sensor for motion sensing and an NPM1300
+          power management IC for battery charging, monitoring, and power management. Both the mouse
+          and dongle were designed from the ground up, including hardware architecture, schematic design,
+          PCB layout, firmware architecture, communication protocol design, and system integration. A
+          PC-side host application was also developed to allow configuration of mouse settings. Although
+          the source code is not publicly released, the project demonstrates end-to-end embedded systems
+          development across wireless communication, USB HID design, sensor integration, battery-powered
+          hardware, inter-processor communication, and desktop software tooling.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © 2026 Syed Mir Hamza. Engineering Portfolio.
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
